@@ -1,0 +1,1 @@
+%CONFLUENT_HOME%\bin\windows\schema-registry-start.bat %CONFLUENT_HOME%\etc\schema-registry\schema-registry.properties

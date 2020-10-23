@@ -1,0 +1,17 @@
+{
+  "namespace": "guru.learningjournal.spring.kafka.examples",
+  "type": "record",
+  "name": "DeliveryNotification",
+  "fields": [
+    {
+      "name": "InvoiceNumber",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+          "name": "DeliveryType",
+          "type": "string",
+          "avro.java.string": "String"
+    }
+  ]
+}

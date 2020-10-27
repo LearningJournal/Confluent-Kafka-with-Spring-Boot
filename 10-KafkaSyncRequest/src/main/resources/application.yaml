@@ -1,0 +1,21 @@
+spring:
+  kafka:
+    bootstrap-server: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            value:
+              default:
+                type: guru.learningjournal.spring.kafka.examples.models.Invoice
+app:
+  kafka:
+    request-topic: discount-request
+    reply-topic: discount-response
+    reply-listener-group-id: reply-listener-group-1

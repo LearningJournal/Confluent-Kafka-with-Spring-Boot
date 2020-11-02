@@ -26,7 +26,8 @@ public class KafkaDiscountRequesterService {
 
     public Discount sendMessage(Invoice invoice) throws InterruptedException, ExecutionException, TimeoutException {
 
-        ProducerRecord<String, Invoice> producerRecord = new ProducerRecord<>(topic, invoice);
+        ProducerRecord<String, Invoice> producerRecord = new ProducerRecord<>(topic,
+                invoice.getInvoiceNumber(), invoice);
         ConsumerRecord<String, Discount> consumerRecord = kafkaTemplate.sendAndReceive(producerRecord)
                 .get(30, TimeUnit.MINUTES);
 
